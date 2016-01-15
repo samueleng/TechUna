@@ -1,0 +1,55 @@
+<html ng-app="myApp"> 
+ 
+<head> 
+
+	 <title>Employees</title> 
+
+	 <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"> 
+
+	 <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>  
+ 
+ 	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>   
+
+ 	 <script src= "scripts/angular-route.js" type="text/javascript"></script>  
+
+ 	 <script src="controllers/employeeCtrl.js"></script>   
+
+</head> 
+
+<body style="margin:20px" ng-controller="employeeCtrl"> 
+ 
+ 	<div> 
+ 		 <h3>Example of Firebase backend</h3>
+ 		 <label>Add Team Members</label> 
+ 		 <input type="text" id="employeeName" ng-model="employeeName"><br /> 
+
+ 	</div> 
+
+ 	<div> 
+ 		<button class="btn btn-default" ng-click="saveEmployee()"> 
+ 			Save<span class="glyphicon glyphicon-ok"></span> 
+ 		</button> 
+
+ 	</div> 
+
+ 	<div> 
+ 		<table class="table table-bordered"> 
+
+ 		 	<thread> 
+ 		 		<th>Team Member Name</th> 
+ 		 	</thread> 
+
+ 		 	<tbody ng-repeat="employee in employees"> 
+
+ 		 	 	<tr> 
+ 		 	 		<td> {{employee.employeeName}} </td> 
+ 		 	 	</tr>  
+
+ 		 	</tbody> 
+ 		</table>
+ 	</div> 
+ 
+					 
+</body> 
+
+</html>
