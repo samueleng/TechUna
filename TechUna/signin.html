@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="signInApp" lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bootbusiness | Short description about company">
     <meta name="author" content="Your name">
-    <title>Bootbusiness | Give unique title of the page here</title>
+    <title>TechUna</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap responsive -->
@@ -14,16 +14,27 @@
     <link href="css/font-awesome.css" rel="stylesheet">
     <link href="css/font-awesome-ie7.css" rel="stylesheet">
     <!-- Bootbusiness theme -->
-    <link href="css/boot-business.css" rel="stylesheet">
+    <link href="css/boot-business.css" rel="stylesheet"> 
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>   
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>   
+
+    <script src= "scripts/angular-route.js" type="text/javascript"></script>  
+
+    <script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script> 
+
+    <script src="controllers/signInCtrl.js"></script>    
+
+    <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
   </head>
-  <body>
+  <body ng-controller="signInCtrl">
     <!-- Start: HEADER -->
     <header>
       <!-- Start: Navigation wrapper -->
       <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
           <div class="container">
-            <a href="index.html" class="brand brand-bootbus">Bootbusiness</a>
+            <a href="index.html" class="brand brand-bootbus">TechUna</a>
             <!-- Below button used for responsive navigation -->
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
               <span class="icon-bar"></span>
@@ -53,14 +64,15 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
                   <ul class="dropdown-menu">
                     <li><a href="our_works.html">Our works</a></li>
-                    <li><a href="patnerships.html">Parnerships</a></li>
+                    <li><a href="patnerships.html">Partnerships</a></li>
                     <li><a href="leadership.html">Leadership</a></li>
                     <li><a href="news.html">News</a></li>
                     <li><a href="events.html">Events</a></li>
                     <li><a href="blog.html">Blog</a></li>
                   </ul>
                 </li>
-                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="faq.html">FAQ</a></li> 
+                <li><a href="employee.html">Employees</a></li>
                 <li><a href="contact_us.html">Contact us</a></li>
                 <li><a href="signup.html">Sign up</a></li>
                 <li><a href="signin.html" class="active-link">Sign in</a></li>
@@ -76,16 +88,16 @@
     <div class="content">
       <div class="container">
         <div class="page-header">
-          <h1>Signin to Bootbusiness</h1>
+          <h1>Signin to TechUna</h1>
         </div>
         <div class="row">
           <div class="span6 offset3">
-            <h4 class="widget-header"><i class="icon-lock"></i> Signin to Bootbusiness</h4>
+            <h4 class="widget-header"><i class="icon-lock"></i> Signin to TechUna</h4>
             <div class="widget-body">
               <div class="center-align">
                 <form class="form-horizontal form-signin-signup">
-                  <input type="text" name="email" placeholder="Email">
-                  <input type="password" name="password" placeholder="Password">
+                  <input ng-model="user.email" type="email" placeholder="Email">
+                  <input ng-model="user.password" type="password" placeholder="Password">
                   <div class="remember-me">
                     <div class="pull-left">
                       <label class="checkbox">
@@ -97,7 +109,7 @@
                     </div>
                     <div class="clearfix"></div>
                   </div>
-                  <input type="submit" value="Signin" class="btn btn-primary btn-large">
+                  <input type="submit" ng-click="SignIn($event)" value="Signin" class="btn btn-primary btn-large">
                 </form>
                 <h4><i class="icon-question-sign"></i> Don't have an account?</h4>
                 <a href="signup.html" class="btn btn-large bottom-space">Signup</a>
@@ -110,10 +122,13 @@
                     </a>
                   </li>
                   <li>
-                    <a class="btn-facebook">
+                    <!-- <a class="btn-facebook">
                       <i class="icon-facebook icon-large"></i>
                       Signin with Facebook
-                    </a>
+                    </a> --> 
+                     <button class="btn btn-default" onclick="login()"> 
+                        Signin Facebook<span class="glyphicon glyphicon-ok"></span> 
+                    </button> 
                   </li>
                   <li>
                     <a class="btn-google">
@@ -164,7 +179,7 @@
             <nav>
               <ul class="quick-links">
                 <li><a href="our_works.html">Our works</a></li>
-                <li><a href="patnerships.html">Patnerships</a></li>
+                <li><a href="partnerships.html">Patnerships</a></li>
                 <li><a href="leadership.html">Leadership</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="events.html">Events</a></li>
@@ -218,13 +233,27 @@
       <hr class="footer-divider">
       <div class="container">
         <p>
-          &copy; 2012-3000 Bootbusiness, Inc. All Rights Reserved.
+          &copy; 2016-3000 TechUna, Inc. All Rights Reserved.
         </p>
       </div>
     </footer>
     <!-- End: FOOTER -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/boot-business.js"></script>
+    <script type="text/javascript" src="js/boot-business.js"></script> 
+    <script>  
+          function login(){ 
+            var ref = new Firebase("https://samengfire.firebaseio.com/");
+            ref.authWithOAuthPopup("facebook", function(error, authData) {
+              if (error) {
+                console.log("Login Failed!", error);
+              } else {
+                console.log("Authenticated successfully with payload:", authData); 
+                console.log(authData.facebook.accessToken);
+              }
+            });  
+
+          }//end of login()
+    </script>
   </body>
 </html>
