@@ -25,7 +25,7 @@
 
     <script src="controllers/signInCtrl.js"></script>    
 
-    <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
   </head>
   <body ng-controller="signInCtrl">
     <!-- Start: HEADER -->
@@ -95,8 +95,8 @@
             <h4 class="widget-header"><i class="icon-lock"></i> Signin to TechUna</h4>
             <div class="widget-body">
               <div class="center-align">
-                <form class="form-horizontal form-signin-signup">
-                  <input ng-model="user.email" type="email" placeholder="Email">
+                <form class="form-horizontal"> 
+                  <input ng-model="user.email" type="email" placeholder="Email">  
                   <input ng-model="user.password" type="password" placeholder="Password">
                   <div class="remember-me">
                     <div class="pull-left">
