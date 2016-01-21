@@ -9,7 +9,12 @@
   /* keeps button heights with and without icons the same */
 
   line-height: 1.4em;
-}
+} 
+.space {  
+  margin-center: 300px;  
+  width: auto;
+} 
+
 .icon-large {
   font-size: 1.3333em;
 }

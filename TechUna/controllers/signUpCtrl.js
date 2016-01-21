@@ -29,20 +29,3 @@ app.controller('signUpCtrl', ['$scope','$window','$firebaseAuth',function($scope
     };
 }]);  
    
-angular.module('UserValidation', []).directive('validPasswordC', function () {
-    return {
-        require: 'ngModel',
-        link: function (scope, elm, attrs, ctrl) {
-            
-              ctrl.$setValidity('noMatch', true);
-
-                attrs.$observe('validPasswordC', function (newVal) {
-                    if (newVal === 'true') {
-                        ctrl.$setValidity('noMatch', true);
-                    } else {
-                        ctrl.$setValidity('noMatch', false);
-                    }
-                });
-        }
-    }
-})

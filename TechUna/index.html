@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="homeApp">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bootbusiness | Short description about company">
+    <meta name="description" content="TechUna | Short description about company">
     <meta name="author" content="Your name">
-    <title>TechUna | A startup dream</title>
+    <title>TechUna | A startup dream</title> 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap responsive -->
@@ -14,11 +14,23 @@
     <link href="css/font-awesome.css" rel="stylesheet">
     <link href="css/font-awesome-ie7.css" rel="stylesheet">
     <!-- Bootbusiness theme -->
-    <link href="css/boot-business.css" rel="stylesheet">
+    <link href="css/boot-business.css" rel="stylesheet"> 
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>   
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>   
+
+    <script src= "scripts/angular-route.js" type="text/javascript"></script>  
+
+    <script src="https://cdn.firebase.com/js/simple-login/1.6.2/firebase-simple-login.js"></script>   
+
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>  
+
+    <script src="controllers/IndexCtrl.js"></script>
+  
   </head>
-  <body>
+  <body ng-controller="signOutCtrl">
     <!-- Start: HEADER --> 
-    <header>
+    <header> 
       <!-- Start: Navigation wrapper -->
       <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
@@ -32,39 +44,47 @@
             </button>
             <!-- Start: Primary navigation -->
             <div class="nav-collapse collapse">        
-              <ul class="nav pull-right">
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products and Services<b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-header">PRODUCTS</li>
-                    <li><a href="product.html">Product1</a></li>
-                    <li><a href="product.html">Product2</a></li>
-                    <li><a href="product.html">Product3</a></li>
-                    <li><a href="all_products.html">All products</a></li>             
-                    <li class="divider"></li>
-                    <li class="nav-header">SERVICES</li>
-                    <li><a href="service.html">Service1</a></li>
-                    <li><a href="service.html">Service2</a></li>
-                    <li><a href="service.html">Service3</a></li>
-                    <li><a href="all_services.html">All services</a></li>
-                  </ul>                  
-                </li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="our_works.html">Our works</a></li>
-                    <li><a href="patnerships.html">Partnerships</a></li>
-                    <li><a href="leadership.html">Leadership</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="events.html">Events</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                  </ul>
-                </li>
-                <li><a href="faq.html">FAQ</a></li> 
+              <ul class="nav pull-right"> 
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="our_philosophy.html">Our Philosophy</a></li>
+                        <li><a href="company_statement.html">Company Statement</a></li>
+                        <li><a href="smart_technologies.html">Smart Technologies</a></li>
+                        <li><a href="opportunities.html">Opportunities</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="creators.html">The creators</a></li>
+                      </ul>
+                    </li>
+                  <li class="dropdown"> 
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products and Services<b class="caret"></b></a> 
+                    <ul class="dropdown-menu">
+                      <li class="nav-header">PRODUCTS</li>
+                      <li><a href="product.html">Product1</a></li>
+                      <li><a href="product.html">Product2</a></li>
+                      <li><a href="product.html">Product3</a></li>
+                      <li><a href="all_products.html">All products</a></li>             
+                      <li class="divider"></li>
+                      <li class="nav-header">SERVICES</li>
+                      <li><a href="service.html">Service1</a></li>
+                      <li><a href="service.html">Service2</a></li>
+                      <li><a href="service.html">Service3</a></li>
+                      <li><a href="all_services.html">All services</a></li>
+                    </ul>          
+                     <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Partners<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="our_partners.html">Our Partners</a></li>
+                      </ul>
+                    </li>
+                  <li class="dropdown">          
+                  </li>
                 <li><a href="employee.html">Employees</a></li>
-                <li><a href="contact_us.html">Contact us</a></li>
-                <li><a href="signup.html">Sign up</a></li>
-                <li><a href="signin.html">Sign in</a></li>
+                <li><a href="join_us.html">Join us</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="signin.html">Sign In</a></li>  
+                <li><a href="" ng-click="logOut()">Sign Out</a></li> 
+              
               </ul>
             </div>
           </div>
@@ -84,7 +104,7 @@
                 <div class="hero-unit">
                   <div class="row-fluid">
                     <div class="span7 marketting-info">
-                      <h1>Types of Technology</h1>
+                      <h3>Your Gateway To Smart Gadgets And Technology</h3>
                       <p>
                           Techuna brings together the clients, smart technology providers and talented individuals onto a single platform
                       </p>
@@ -93,7 +113,7 @@
                       </h3>                      
                     </div>
                     <div class="span5">
-                      <img src="img/techuna.png" class="thumbnail">
+                      <img src="img/logo.png" class="thumbnail">
                     </div>
                   </div>                  
                 </div>
@@ -165,7 +185,7 @@
       <!-- Start: PRODUCT LIST -->
         <div class="container">
           <div class="page-header">
-            <h2>Check Out The Latest Technology Below</h2>
+            <h2>Featured Partners</h2>
           </div>
           <div class="row-fluid">
             <ul class="thumbnails">
@@ -173,14 +193,73 @@
                 <div class="thumbnail">
                   <img src="img/placeholder-360x200.jpg" alt="product name">
                   <div class="caption">
-                    <h3>Product name</h3>
+                    <h3>Partner 1</h3>
+                    <p>
+                      Partner Description
+                    </p>
+                  </div>
+                  <div class="widget-footer">
+                    <p>
+                      <a href="#" class="btn btn-primary">Website</a>&nbsp;
+                      <a href="product.html" class="btn">Read more</a>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="span4">
+                <div class="thumbnail">
+                  <img src="img/placeholder-360x200.jpg" alt="product name">
+                  <div class="caption">
+                    <h3>Partner 2</h3>
+                    <p>
+                     Partner Description
+                    </p>
+                  </div>
+                  <div class="widget-footer">
+                    <p>
+                      <a href="#" class="btn btn-primary">Website</a>&nbsp;
+                      <a href="product.html" class="btn">Read more</a>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="span4">
+                <div class="thumbnail">
+                  <img src="img/placeholder-360x200.jpg" alt="product name">
+                  <div class="caption">
+                    <h3>Partner 3</h3>
+                    <p>
+                     Partner Description
+                    </p>
+                  </div>
+                  <div class="widget-footer">
+                    <p>
+                      <a href="#" class="btn btn-primary">Website</a>&nbsp;
+                      <a href="product.html" class="btn">Read more</a>
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div> 
+          <!-- Products --> 
+          <div class="page-header">
+            <h2>Products</h2>
+          </div>
+          <div class="row-fluid">
+            <ul class="thumbnails">
+              <li class="span4">
+                <div class="thumbnail">
+                  <img src="img/placeholder-360x200.jpg" alt="product name">
+                  <div class="caption">
+                    <h3>Product 1</h3>
                     <p>
                       Product Description
                     </p>
                   </div>
                   <div class="widget-footer">
                     <p>
-                      <a href="#" class="btn btn-primary">Buy now</a>&nbsp;
+                      <a href="#" class="btn btn-primary">Download product</a>&nbsp;
                       <a href="product.html" class="btn">Read more</a>
                     </p>
                   </div>
@@ -190,14 +269,14 @@
                 <div class="thumbnail">
                   <img src="img/placeholder-360x200.jpg" alt="product name">
                   <div class="caption">
-                    <h3>Product name</h3>
+                    <h3>Product 2</h3>
                     <p>
                      Product Description
                     </p>
                   </div>
                   <div class="widget-footer">
                     <p>
-                      <a href="#" class="btn btn-primary">Buy now</a>&nbsp;
+                      <a href="#" class="btn btn-primary">Download product</a>&nbsp;
                       <a href="product.html" class="btn">Read more</a>
                     </p>
                   </div>
@@ -207,14 +286,14 @@
                 <div class="thumbnail">
                   <img src="img/placeholder-360x200.jpg" alt="product name">
                   <div class="caption">
-                    <h3>Product name</h3>
+                    <h3>Partner 3</h3>
                     <p>
-                   Product Description
+                     Product Description
                     </p>
                   </div>
                   <div class="widget-footer">
                     <p>
-                      <a href="#" class="btn btn-primary">Buy now</a>&nbsp;
+                      <a href="#" class="btn btn-primary">Download product</a>&nbsp;
                       <a href="product.html" class="btn">Read more</a>
                     </p>
                   </div>
@@ -231,9 +310,9 @@
                 <div class="thumbnail">
                   <img src="img/placeholder-360x200.jpg" alt="product name">
                   <div class="caption">
-                    <h3>Service title</h3>
+                    <h3>Service 1</h3>
                     <p>
-                       Product Description
+                       Service description
                     </p>
                   </div>
                   <div class="widget-footer">
@@ -248,9 +327,9 @@
                 <div class="thumbnail">
                   <img src="img/placeholder-360x200.jpg" alt="product name">
                   <div class="caption">
-                    <h3>Service title</h3>
+                    <h3>Service 2</h3>
                     <p>
-                      Product Description
+                      Service description
                     </p>
                   </div>
                   <div class="widget-footer">
@@ -265,10 +344,9 @@
                 <div class="thumbnail">
                   <img src="img/placeholder-360x200.jpg" alt="product name">
                   <div class="caption">
-                    <h3>Service title</h3>
+                    <h3>Service 3</h3>
                     <p>
-                      Few attractive words about your service.Few attractive words about your service.
-                      Few attractive words about your service.Few attractive words about your service.
+                      Service description
                     </p>
                   </div>
                   <div class="widget-footer">
@@ -313,12 +391,12 @@
             <h4><i class="icon-beaker icon-white"></i> About</h4>
             <nav>
               <ul class="quick-links">
-                <li><a href="our_works.html">Our works</a></li>
+                <li><a href="our_philosophy.html">Our works</a></li>
                 <li><a href="patnerships.html">Patnerships</a></li>
                 <li><a href="leadership.html">Leadership</a></li>
-                <li><a href="news.html">News</a></li>
+                <li><a href="opportunities.html">News</a></li>
                 <li><a href="events.html">Events</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="creators.html">Blog</a></li>
               <ul>
             </nav>          
           </div>
@@ -327,7 +405,7 @@
             <nav>
               <ul class="quick-links">
                 <li><a href="faq.html">FAQ</a></li>
-                <li><a href="contact_us.html">Contact us</a></li>            
+                <li><a href="join_us.html">Contact us</a></li>            
               </ul>
             </nav>
             <h4><i class="icon-legal icon-white"></i> Legal</h4>
