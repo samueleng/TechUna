@@ -110,7 +110,7 @@
     min-height: 1px;
     margin-left: 30px;
   }
-  .container,
+  .container, 
   .navbar-static-top .container,
   .navbar-fixed-top .container,
   .navbar-fixed-bottom .container {
@@ -800,7 +800,8 @@
     margin-left: 0;
   }
   .container {
-    width: auto;
+    width: auto;  
+    margin: auto;
   }
   .row-fluid {
     width: 100%;
