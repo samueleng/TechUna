@@ -31,7 +31,7 @@
   <body ng-controller="signOutCtrl">
     <!-- Start: HEADER --> 
     <header> 
-      <!-- Start: Navigation wrapper -->
+    <!-- Start: Navigation wrapper -->
       <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
           <div class="container">
@@ -46,7 +46,7 @@
             <div class="nav-collapse collapse">        
               <ul class="nav pull-right"> 
                   <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i><br />About<b class="caret"></b></a>
                       <ul class="dropdown-menu">
                         <li><a href="our_philosophy.html">Our Philosophy</a></li>
                         <li><a href="company_statement.html">Company Statement</a></li>
@@ -57,7 +57,7 @@
                       </ul>
                     </li>
                   <li class="dropdown"> 
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products and Services<b class="caret"></b></a> 
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-tasks"></i><br />Products and Services<b class="caret"></b></a> 
                     <ul class="dropdown-menu">
                       <li class="nav-header">PRODUCTS</li>
                       <li><a href="product.html">Product1</a></li>
@@ -72,25 +72,31 @@
                       <li><a href="all_services.html">All services</a></li>
                     </ul>          
                      <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Partners<b class="caret"></b></a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-dashboard"></i><br />Partners<b class="caret"></b></a>
                       <ul class="dropdown-menu">
                         <li><a href="our_partners.html">Our Partners</a></li>
                       </ul>
                     </li>
                   <li class="dropdown">          
-                  </li>
-                <li><a href="employee.html">Employees</a></li>
-                <li><a href="join_us.html">Contact us</a></li>
-                <li><a href="signup.html">Sign Up</a></li>
-                <li><a href="signin.html">Sign In</a></li>  
+                  </li>  
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-comment"></i><br />Live<b class="caret"></b></a> 
+                  <ul class="dropdown-menu">
+                    <li><a href="employee.html">Employees</a></li>  
+                    <li><a href="firechat.html">Chat</a></li>
+                  </ul> 
+                </li>
+                <li><a href="join_us.html"><i class="icon-envelope-alt"></i><br />Join us</a></li>
+                <li><a href="signup.html"><i class="icon-sitemap"></i><br />Sign Up</a></li>
+                <li><a href="signin.html"><i class="icon-signin"></i><br />Sign In</a></li>  
                 <li><a href="" ng-click="logOut()">Sign Out</a></li> 
-              
+                
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <!-- End: Navigation wrapper -->   
+      <!-- End: Navigation wrapper -->    
     </header>
     <!-- End: HEADER -->
     <!-- Start: MAIN CONTENT -->
