@@ -16,9 +16,11 @@ function registerUser() {
     email    : username,
     password : password
   }, function(error, userData) {
-    if (error) {
+    if (error) { 
+      alert("Error creating user:", error)
       console.log("Error creating user:", error);
-    } else {
+    } else { 
+      alert("Successfully created user account with uid:", userData.uid)
       console.log("Successfully created user account with uid:", userData.uid); 
       window.location.href = "firechat.html"
     }
@@ -34,9 +36,11 @@ function loginUser() {
     email    : username,
     password : password
   }, function(error, authData) {
-    if (error) {
+    if (error) { 
+      alert("Login Failed!", error)
       console.log("Login Failed!", error);
-    } else {
+    } else { 
+      alert("Authenticated successfully with payload:", authData)
       console.log("Authenticated successfully with payload:", authData);
     }
   });
