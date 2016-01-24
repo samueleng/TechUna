@@ -1,10 +1,5 @@
 var app = angular.module("homeApp", ['ngRoute','firebase'])    
-var body = document.getElementsByTagName('body')[0];
  
-setTimeout(function() {
-  body.setAttribute('ng-app', 'homeApp');
-  app.bootstrap(body, ['ng', 'homeApp']);
-}, 1000);  
 
 app.controller('signOutCtrl', ['$scope', '$window','$firebaseAuth',function($scope, $window, $firebaseAuth) { 
 	$scope.logOut = function() { 
