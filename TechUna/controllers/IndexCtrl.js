@@ -1,7 +1,7 @@
-var app = angular.module("homeApp", ['ngRoute','firebase'])    
- 
+var mainApp = angular.module("mainApp", ['ngRoute','firebase'])    
 
-app.controller('signOutCtrl', ['$scope', '$window','$firebaseAuth',function($scope, $window, $firebaseAuth) { 
+
+mainApp.controller('indexCtrl', ['$scope', '$window','$firebaseAuth',function($scope, $window, $firebaseAuth) { 
 	$scope.logOut = function() { 
 		var ref = new Firebase("https://samengfire.firebaseio.com/"); 
 		var authData = ref.getAuth();
@@ -19,8 +19,11 @@ app.controller('signOutCtrl', ['$scope', '$window','$firebaseAuth',function($sco
     }
 }]); 
   
+    
  
-app.service("out", function() {  
+
+/*For signing out*/
+mainApp.service("out", function() {  
     var logOut = function() {
        var ref = new Firebase("https://samengfire.firebaseio.com/"); 
 		var authData = ref.getAuth();
@@ -36,7 +39,8 @@ app.service("out", function() {
     	}
     	$window.location.href = '/index.html';  
     }  
-}); 
+});  
+ 
    
 
 

@@ -1,0 +1,16 @@
+body {
+  background-color: #ddd;
+}
+.CodeMirror {
+  border: 1px solid #aaa;
+  min-height: 200px;
+}
+.firepad-toolbar {
+  border: none;
+}
+.powered-by-firepad {
+  display:none;
+}
+.panel-heading h4 {
+  margin: 0 auto;
+}

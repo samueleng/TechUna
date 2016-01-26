@@ -34,4 +34,5 @@ function authDataCallback(authData) {
   } else {
     console.log("User is logged out");
   }
-}
+} 
+  
