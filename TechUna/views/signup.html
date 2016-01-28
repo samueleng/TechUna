@@ -1,0 +1,80 @@
+ <!-- Start: MAIN CONTENT -->
+ <div class="content">
+  <div class="container">
+    <div class="page-header">
+      <h1>Signup</h1>
+    </div>
+    <div class="row">
+      <div class="span6 offset3">
+        <h4 class="widget-header"><i class="icon-gift"></i> Be a part of TechUna</h4>
+        <div class="widget-body">
+          <div class="center-align">  
+
+            <div class="formWrapper"> 
+              <form class="form-horizontal" name="regForm"> 
+                <!-- Email --> 
+                <div class="form-group">
+                  <label><b>Email</b></label>
+                  <input type="email" name="email" class="form-control" ng-model="user.email" placeholder ="Email" required=""> 
+                  <p style="color:red;" span ng-show="regForm.email.$error.required && regForm.email.$dirty">required</span>
+                   <p style="color:red;" span ng-show="!regForm.email.$error.required && regForm.email.$error.email && regForm.email.$dirty">invalid email</span> 
+                     <p style="color:red;" ng-show="regError">{{regErrorMessage}}</p> 
+                   </div>
+                   <br />
+                   <br />
+                   <!-- Password --> 
+                   <div class="fieldWrapper">   
+                    <div class="form-group">
+                      <label><b>Password</b></label> 
+                      <input type="password" id="pass1" name="password" class="form-control" data-ng-model="user.password" ng-minlength="8" placeholder="Password" ng-maxlength="20" ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z])/" required> 
+                      <br />  
+                      <p style="color:red;" span ng-show="regForm.password.$error.required && regForm.password.$dirty">required</span>
+                       <p style="color:red;" span ng-show="!regForm.password.$error.required && (regForm.password.$error.minlength || regForm.password.$error.maxlength) && regForm.password.$dirty">Passwords must be between 8 and 20 characters.</span>
+                         <p style="color:red;" span ng-show="!regForm.password.$error.required && !regForm.password.$error.minlength && !regForm.password.$error.maxlength && regForm.password.$error.pattern && regForm.password.$dirty">Must contain one lower &amp; uppercase letter, and one non-alpha character (a number or a symbol.) 
+                         </div>
+                       </div>    
+                     </div> 
+
+                     <!-- Submit -->
+                     <br /> 
+                     <button type="button" ng-click="signUp();" ng-disabled="!user.email || !user.password"  class="btn btn-lg btn-primary btn-block">Register</button> 
+                     <br />
+                   </form> 
+                   
+                   <h4><i class="icon-question-sign"></i> Already have an account?</h4>
+                   <a href="signin.html" class="btn btn-large bottom-space">Signin</a>
+                   <h4><i class="icon-thumbs-up"></i> Sign in with third party account</h4>
+                   <ul class="signin-with-list">
+                    <li>
+                      <a class="btn-twitter">
+                        <i class="icon-twitter icon-large"></i>
+                        Signin with Twitter
+                      </a>
+                    </li>
+                    <li>
+                      <a class="btn-facebook">
+                        <i class="icon-facebook icon-large"></i>
+                        Signin with Facebook
+                      </a>
+                    </li>
+                    <li>
+                      <a class="btn-google">
+                        <i class="icon-google-plus icon-large"></i>
+                        Signin with Google
+                      </a>
+                    </li>
+                    <li>
+                      <a class="btn-github">
+                        <i class="icon-github icon-large"></i>
+                        Signin with Github
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+      <!-- End: MAIN CONTENT -->

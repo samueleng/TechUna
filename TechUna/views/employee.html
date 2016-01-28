@@ -1,0 +1,30 @@
+<div> 
+	<h3>Example of Firebase backend</h3>
+	<label>Add Team Members</label> 
+	<input type="text" id="employeeName" ng-model="employeeName"><br /> 
+
+</div> 
+
+<div> 
+	<button class="btn btn-default" ng-click="saveEmployee()"> 
+		Save<span class="glyphicon glyphicon-ok"></span> 
+	</button> 
+
+</div> 
+
+<div> 
+	<table class="table table-bordered"> 
+
+		<thread> 
+			<th>Team Member Name</th> 
+		</thread> 
+
+		<tbody ng-repeat="employee in employees"> 
+
+			<tr> 
+				<td> {{employee.employeeName}} </td> 
+			</tr>  
+
+		</tbody> 
+	</table>
+</div> 

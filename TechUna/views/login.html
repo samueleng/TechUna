@@ -1,0 +1,49 @@
+ <!-- Start: MAIN CONTENT -->
+  <div class="content">
+    <div class="container">
+      <div class="page-header">
+        <h1>Sign In To TechUna</h1>
+      </div>
+      <div class="row">
+        <div class="span6 offset3"> 
+          <h4 class="widget-header"><i class="icon-lock"></i> Signin to TechUna</h4>
+          <div class="widget-body">
+            <div class="center-align">
+              <!-- LOGIN -->
+              <form id="frmLogin" ng-submit="login(credentials)" class="form-horizontal" role="form" style="display: block;">
+
+               <div class="form-group">
+                <label for="txtEmail"><b>Email address</b></label>
+                <input ng-model="credentials.email"  type="email" class="form-control" id="txtEmail" placeholder="Enter email" name="email">
+              </div> 
+              <br>
+              <br>
+              <div class="form-group">
+                <label for="txtPass"><b>Password</b></label>
+                <input ng-model="credentials.password" type="password" class="form-control" id="txtPass" placeholder="Password" name="password">
+              </div> 
+              <br>
+              <br>
+              <button type="submit" style="width:300px" class="btn btn-success btn-large">Login</button>
+              <br>
+              <br>
+              <h4>Login with</h4>
+              <a href="http://fiddle.jshell.net/firebase/a221m6pb/show/light/#" class="btn btn-primary bt-social" data-provider="facebook">Facebook</a>
+              <a href="http://fiddle.jshell.net/firebase/a221m6pb/show/light/#" class="btn btn-info bt-social" data-provider="twitter">Twitter</a>
+
+              <!-- <a href="#" class="btn btn-danger bt-social" data-provider="google">Google+</a> --> <a href="http://fiddle.jshell.net/firebase/a221m6pb/show/light/#" class="btn btn-default bt-social" data-provider="github">GitHub</a>
+              <a href="http://fiddle.jshell.net/firebase/a221m6pb/show/light/#" class="btn btn-warning" id="btAnon">Anon</a>
+
+            </form>
+            <!-- / LOGIN -->
+            <hr>
+            <!-- ALERT BOX -->
+            <div id="alert" class="alert alert-info" role="alert">
+             <h4 id="alert-title">You are not logged in</h4>
+
+             <p id="alert-detail"></p>
+           </div>
+           <!-- / ALERT BOX -->
+         </div>
+
+       </div>
