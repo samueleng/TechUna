@@ -19,7 +19,7 @@ div.list-messages {
     li {
       width: 560px;
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 20px; 
       box-sizing: border-box;
 
       &:first-child {
