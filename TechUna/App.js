@@ -19,6 +19,25 @@ angular
 					url: '/index.html'
 				});
 
+				$stateProvider.state('profile', { 
+					controller: 'profileCtrl', 
+					templateUrl: 'views/profile.html',
+					url: '/profile.html', 
+					resolve: { 
+					      auth: function($state, Users, Auth) { 
+					        return Auth.$requireAuth().catch(function(){
+					          $state.go('home');
+					        });
+					      },
+
+					      profile: function(Users, Auth){
+					        return Auth.$requireAuth().then(function(auth){
+					          return Users.getProfile(auth.uid).$loaded();
+					        });
+					      }
+					    }
+				})
+
 				$stateProvider.state('all_products',{ 
 					// controller: 'indexCtrl', 
 					templateUrl: 'views/all_products.html', 
@@ -61,10 +80,10 @@ angular
 					url: '/faq.html'
 				});  
 
-				$stateProvider.state('firechat',{ 
-					// controller: 'indexCtrl', 
-					templateUrl: 'views/firechat.html', 
-					url: '/firechat.html'
+				$stateProvider.state('chat',{ 
+					controller: 'chatCtrl', 
+					templateUrl: 'views/chat.html', 
+					url: '/chat.html'
 				});
 
 				$stateProvider.state('join_us',{ 

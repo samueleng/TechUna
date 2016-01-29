@@ -4,11 +4,11 @@ angular
 		'AuthService',
 		[
 			'$firebaseAuth',
-			'SessionService',
+			'SessionService', 
+			'FIREBASE',
 			function($firebaseAuth, SessionService) {
 				var authService = {};
 
-				var firebase = new Firebase("https://samengfire.firebaseio.com/");
 
 				authService.isAuthenticated = function() {
 					return !!SessionService.userId;
@@ -32,7 +32,7 @@ angular
 				};
 
 				authService.logout = function() {
-					var authService = $firebaseAuth(firebase);
+					var authService = $firebaseAuth(FIREBASE);
 
 					SessionService.destroy();
 

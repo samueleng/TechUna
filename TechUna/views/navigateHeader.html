@@ -1,9 +1,10 @@
-<div ng-if="isAuthenticated()">Welcome, {{ currentUser.uid }}</div> 
-  <!-- Start: Navigation wrapper --> 
+<!-- Start: Navigation wrapper --> 
   <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
       <div class="container">
-        <a href="#index.html" class="brand brand-bootbus">TechUna</a> 
+        <a href="#index.html" class="brand brand-bootbus">TechUna</a>  
+        <div ng-if="isAuthenticated()">Welcome, {{ currentUser.uid }}</div>  
+        <li ng-if="isAuthenticated()"><a href="#profile.html">Edit Profile</a></li> 
         <!-- Below button used for responsive navigation -->
         <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
@@ -51,7 +52,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-comment"></i><br />Live<b class="caret"></b></a> 
                 <ul class="dropdown-menu">
                   <li><a href="#employee.html">Employees</a></li>  
-                  <li><a href="#firechat.html">Chat</a></li>
+                  <li><a href="#chat.html">Chat</a></li>
                 </ul> 
               </li>
               <li><a href="#join_us.html"><i class="icon-envelope-alt"></i><br />Join us</a></li>
