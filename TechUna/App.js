@@ -122,7 +122,7 @@ angular
 				}); 
 
 				$stateProvider.state('product',{ 
-					// controller: 'indexCtrl', 
+					controller: 'productCtrl', 
 					templateUrl: 'views/product.html', 
 					url: '/product.html'
 				}); 
