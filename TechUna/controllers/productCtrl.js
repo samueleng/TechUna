@@ -8,7 +8,7 @@ angular
 
              $scope.showForm = function(){ 
                 $scope.addFormShow = true; 
-                $scope.editFormShow = false; 
+                $scope.editFormShow = false ; 
                 clearForm(); 
              } 
 
