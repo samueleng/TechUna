@@ -1,7 +1,7 @@
 angular 
 	  .module('App')
 		.controller('chatCtrl', function($scope, $firebaseArray, $firebaseObject) {
-		  var ref = new Firebase("https://samengfire.firebaseio.com/");
+		  var ref = new Firebase("https://samengfire.firebaseio.com/messages");
 		  
 		  $scope.messages = $firebaseArray(ref);
 		  
