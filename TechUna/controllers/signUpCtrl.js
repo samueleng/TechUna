@@ -1,4 +1,6 @@
-angular 
+'use strict' 
+ 
+ angular 
     .module('App')  
        .controller('signUpCtrl', ['$scope','$window','$firebaseAuth',function($scope, $window, $firebaseAuth) {
           var firebaseObj = new Firebase("https://samengfire.firebaseio.com/");

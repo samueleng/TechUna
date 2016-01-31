@@ -1,3 +1,5 @@
+'use strict' 
+ 
 angular 
   .module('App') 
     .controller('indexCtrl', ['$scope', '$window','$firebaseAuth',function($scope, $window, $firebaseAuth) { 

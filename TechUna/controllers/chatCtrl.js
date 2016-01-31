@@ -1,3 +1,5 @@
+'use strict' 
+
 angular 
 	  .module('App')
 		.controller('chatCtrl', function($scope, $firebaseArray, $firebaseObject, $timeout) {

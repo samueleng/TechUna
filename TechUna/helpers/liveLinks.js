@@ -1,3 +1,5 @@
+'use strict' 
+ 
 function LiveLinks(fbname){ 
 	this.firebase = new Firebase("https//" + fbname + ".firebaseio.com/")   
 

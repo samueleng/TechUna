@@ -1,3 +1,5 @@
+'use strict' 
+ 
 angular
 	   .module('App')
 	   	.controller('profileCtrl', function($state, md5, auth, profile){ 

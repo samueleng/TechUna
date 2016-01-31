@@ -1,3 +1,5 @@
+'use strict' 
+ 
 angular 
        .module("App")
          .controller('productCtrl', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {

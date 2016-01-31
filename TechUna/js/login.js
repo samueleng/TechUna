@@ -1,3 +1,5 @@
+'use strict' 
+ 
 function checkLogin(){
     (function (jQuery, Firebase, Path) {
         "use strict";

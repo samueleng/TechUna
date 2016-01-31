@@ -1,3 +1,5 @@
+'use strict' 
+ 
 function checkPass()
 {
     //Store the password field objects into variables ...
