@@ -1,19 +1,41 @@
- <br /> 
- <br />  
- <br />  
- <div class="container"> 
+<div class="container"> 
  	<div class="page-header">
  		<img src="img/FireChat_logo.png" class="thumbnail">  
- 		<h1>Real Time Chat </h1>
+ 		<h1>Real Time Chat </h1> 
+ 		<h2> {{title}} </h2>
  	</div>
 
- 	<div class="list-messages" id="listMessages">
- 		<ul>
- 			<li ng-repeat="msg in messages"><em>{{msg.from}}</em>: {{msg.body}}</li>
- 		</ul>
- 	</div>
+ 	<div class="list-messages">
 
- 	<div class="new-message" id="newMessage">
- 		<input type="text" ng-model="name" placeholder="Name">
- 		<input type="text" ng-model="msg" ng-keydown="addMessage($event)" placeholder="Message...">
- 	</div>    
+ 			<div ng-repeat="message in messages"> 
+ 			 		{{message.user}} - {{message.text}}
+ 			</div>
+
+ 	</div> 
+
+ 	<button type = "button" class="btn btn-danger" ng-click="turnFeedOff()">Turn feed Off</button>	 
+
+
+
+ 	<div class="row marketing" > 
+
+ 	  <div class="center-align" > 
+
+ 		<input type="text" class="form-control" ng-model="currentUser" placeholder="Name">  
+ 		<span class="input-group-btn">  
+
+ 			<input type="text" class="form-control" ng-model="currentText">   
+
+ 		</span> 
+
+ 		<span class = "input-group-btn"> 
+
+ 			<button class="btn btn-default" type="button" ng-keydown="sendMessage($event)" ng-click="sendMessage()">Send</button> 
+ 		</span>  
+
+ 		<div>  
+
+ 	  </div> 
+
+ 	</div>     
+</div>

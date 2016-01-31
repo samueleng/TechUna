@@ -4,7 +4,7 @@ angular
 		'SessionService',
 		function() {
 			this.create = function(authToken, userId) { 
-				console.log("Login successful")
+				console.log("Login successful") 
 				alert("Login successful")
 				this.authToken = authToken;
 				this.userId = userId;
