@@ -5,7 +5,11 @@ angular
 	.service(
 		'SessionService',  
 
-		function() { 
+		function() {  
+
+			/* 
+				This function create a authToken that will persist for the current user
+			*/ 
 
 			this.create = function(authToken, userId) {  
 
@@ -19,6 +23,9 @@ angular
 
 			}
 
+			/* 
+				This function removes the authToken upon logout
+			*/ 
 			this.destroy = function() {  
 
 				console.log("Logout") 

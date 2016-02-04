@@ -2,7 +2,7 @@
  
 angular  
 	.module("App") 
-	  .controller('employeeCtrl', 
+	  .controller('EmployeeController', 
 		function($scope,$timeout) { 
 						  $scope.employeeName = "";  
 			   			  $scope.employees = {} 

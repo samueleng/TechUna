@@ -5,10 +5,10 @@ angular
 		'App'
 	)
 	.controller(
-		'loginCtrl',
+		'LoginController',
 		[
 			'$scope',
-			function($scope) {
+			function($scope) { 
 				$scope.login = function(credentials) {
 					$scope.loginAction(credentials);
 				}

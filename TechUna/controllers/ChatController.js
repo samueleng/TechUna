@@ -2,7 +2,7 @@
   'use strict';
 
   angular.module('App')
-    .controller('chatCtrl', function ($scope, $timeout, MessageService) {
+    .controller('ChatController', function ($scope, $timeout, MessageService) {
 
       $scope.currentUser = null;
       $scope.currentText = null;

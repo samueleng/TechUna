@@ -2,7 +2,7 @@
  
 angular 
        .module("App")
-         .controller('productCtrl', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
+         .controller('ProductController', ['$scope', '$firebaseArray', function($scope, $firebaseArray) {
 
              var myProducts = new Firebase("https://samengfire.firebaseio.com/products") 
 

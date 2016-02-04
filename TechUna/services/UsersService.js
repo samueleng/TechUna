@@ -1,8 +1,13 @@
 'use strict' 
- 
+  
+/* 
+  This is for users to check their profile information
+  ToDo : 
+*/
 angular.module('App')
   .factory('Users', [
-			'FIREBASE', 
+			'FIREBASE',  
+
 		function($firebaseArray, $firebaseObject, FIREBASE){
 				
     var usersRef = new Firebase(FIREBASE+'users');

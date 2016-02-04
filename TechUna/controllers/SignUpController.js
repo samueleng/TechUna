@@ -2,7 +2,7 @@
  
  angular 
     .module('App')  
-       .controller('signUpCtrl', ['$scope','$window','$firebaseAuth',function($scope, $window, $firebaseAuth) {
+       .controller('SignUpController', ['$scope','$window','$firebaseAuth',function($scope, $window, $firebaseAuth) {
           var firebaseObj = new Firebase("https://samengfire.firebaseio.com/");
           var auth = $firebaseAuth(firebaseObj) 
 

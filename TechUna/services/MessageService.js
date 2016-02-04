@@ -1,4 +1,7 @@
-/*global Firebase*/
+/*global Firebase 
+  ToDo : Chat not completed  
+  Issues: Firebase updates, need to check api 
+*/
 (function(angular) {
   'use strict';
 
@@ -8,17 +11,20 @@
 
     var fireMessage = $firebaseArray(messageRef);  
 
-    return {
+    return { 
+
       childAdded: function childAdded(cb) { 
 
         messageRef.on('child_added', function(snapshot) {
          
           var val = snapshot.val(); 
 
-          cb.call(this, {
+          cb.call(this, { 
+
             user: val.user,
             text: val.text,
-            name: snapshot.key()
+            name: snapshot.key() 
+            
           });
         });
       }, 

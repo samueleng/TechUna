@@ -10,17 +10,18 @@ angular
 		[
 			'$urlRouterProvider',
 			'$stateProvider',
-			function($urlRouterProvider, $stateProvider) {
-				 $urlRouterProvider.otherwise('/index.html');
+			function($urlRouterProvider, $stateProvider) { 
+
+				$urlRouterProvider.otherwise('/index.html');
 
 				$stateProvider.state('home', {
-					controller: 'indexCtrl',
+					controller: 'IndexController',
 					templateUrl: 'views/indexView.html',
 					url: '/index.html'
 				});
 
 				$stateProvider.state('profile', { 
-					controller: 'profileCtrl', 
+					controller: 'ProfileController', 
 					templateUrl: 'views/profile.html',
 					url: '/profile.html', 
 					resolve: { 
@@ -39,108 +40,108 @@ angular
 				})
 
 				$stateProvider.state('all_products',{ 
-					// controller: 'indexCtrl', 
+					// controller: 'IndexController', 
 					templateUrl: 'views/all_products.html', 
 					url: '/all_products.html'
 				});  
 
 				$stateProvider.state('all_services',{ 
-					// controller: 'indexCtrl', 
+					// controller: 'IndexController', 
 					templateUrl: 'views/all_services.html', 
 					url: '/all_services.html'
 				}); 
 
 				$stateProvider.state('company_statement',{ 
-					// controller: 'indexCtrl', 
+					// controller: 'IndexController', 
 					templateUrl: 'views/company_statement.html', 
 					url: '/company_statement.html'
 				}); 
 
 				$stateProvider.state('creators',{ 
-					// controller: 'indexCtrl', 
+					// controller: 'IndexController', 
 					templateUrl: 'views/creators.html', 
 					url: '/creators.html'
 				}) 
 
 				$stateProvider.state('employee', {
-					controller: 'employeeCtrl',
+					controller: 'EmployeeController',
 					templateUrl: 'views/employee.html',
 					url: '/employee.html'
 				}); 
 
 				$stateProvider.state('events',{ 
-					// controller: 'indexCtrl', 
+					// controller: 'IndexController', 
 					templateUrl: 'views/events.html', 
 					url: '/events.html'
 				}); 
 
 				$stateProvider.state('faq',{ 
-					// controller: 'indexCtrl', 
+					// controller: 'IndexController', 
 					templateUrl: 'views/faq.html', 
 					url: '/faq.html'
 				});  
 
 				$stateProvider.state('chat',{ 
-					controller: 'chatCtrl', 
+					controller: 'ChatController', 
 					templateUrl: 'views/chat.html', 
 					url: '/chat.html'
 				});
 
 				$stateProvider.state('join_us',{ 
-					// controller: 'indexCtrl', 
+					// controller: 'IndexController', 
 					templateUrl: 'views/join_us.html', 
 					url: '/join_us.html'
 				}) 
 				$stateProvider.state('login', {
-					controller: 'loginCtrl',
+					controller: 'LoginController',
 					templateUrl: 'views/login.html',
 					url: '/login.html'
 				}); 
 
 				$stateProvider.state('opportunities',{ 
-					// controller: 'indexCtrl', 
+					// controller: 'IndexController', 
 					templateUrl: 'views/opportunities.html', 
 					url: '/opportunities.html'
 				}); 
 
 				$stateProvider.state('our_partners',{ 
-					// controller: 'indexCtrl', 
+					// controller: 'IndexController', 
 					templateUrl: 'views/our_partners.html', 
 					url: '/our_partners.html'
 				}); 
 
 				$stateProvider.state('our_philosophy',{ 
-					// controller: 'indexCtrl', 
+					// controller: 'IndexController', 
 					templateUrl: 'views/our_philosophy.html', 
 					url: '/our_philosophy.html'
 				}) 
 
 				$stateProvider.state('partnerships', {
-					// controller: 'indexCtrl',
+					// controller: 'IndexController',
 					templateUrl: 'views/partnerships.html',
 					url: '/partnerships.html'
 				}); 
 
 				$stateProvider.state('product',{ 
-					controller: 'productCtrl', 
+					controller: 'ProductController', 
 					templateUrl: 'views/product.html', 
 					url: '/product.html'
 				}); 
 
 				$stateProvider.state('service',{ 
-					// controller: 'indexCtrl', 
+					// controller: 'IndexController', 
 					templateUrl: 'views/service.html', 
 					url: '/service.html'
 				}); 
 
 				$stateProvider.state('signup',{ 
-					controller: 'signUpCtrl', 
+					controller: 'SignUpController', 
 					templateUrl: 'views/signup.html', 
 					url: '/signup.html'
 				}) 
 
 				 $stateProvider.state('smart_technologies',{ 
-					// controller: 'indexCtrl', 
+					// controller: 'IndexController', 
 					templateUrl: 'views/smart_technologies.html', 
 					url: '/smart_technologies.html'
 				}) 
@@ -154,13 +155,14 @@ angular
 			loginFail: 'auth-login-fail',
 			logout: 'auth-logout'
 		}
-	)
+	) 
 	.constant(
 		'EXCEPTIONS',
 		{
 			unauthenticated: 'unauthenticated-user'
 		}
-	)
+	) 
+	//This is our firebase URL
 	.constant(
 		'FIREBASE', "https://samengfire.firebaseio.com/"
 	);
