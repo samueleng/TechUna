@@ -162,8 +162,5 @@ angular
 		}
 	)
 	.constant(
-		'FIREBASE',
-		{
-			url: "https://samengfire.firebaseio.com/"
-		}
+		'FIREBASE', "https://samengfire.firebaseio.com/"
 	);

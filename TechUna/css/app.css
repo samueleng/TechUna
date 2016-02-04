@@ -13,4 +13,79 @@ body {
 }
 .panel-heading h4 {
   margin: 0 auto;
+} 
+
+.room-head {
+  margin-top: 35px;
+  border-bottom: 2px solid #CCC;
+  padding: 20px 20px 8px;
+}
+
+.prof-img {
+  vertical-align: bottom;
+}
+
+.welcome-panel {
+  padding-right: 20px;
+}
+
+.cust-text {
+  width: 22%;
+  display: initial;
+  vertical-align: middle;
+  margin-left: 11px;
+}
+
+.rooms,.messages {
+  border: 1px solid #e8e7e8;
+  margin: 20px;
+}
+
+.room {
+  border: 1px solid #c7c7c7;
+  margin-bottom: -1px;
+  background: #fff;
+  -webkit-transition: background .5s;
+  padding: 10px;
+}
+
+.room:hover {
+  background: #e6e6e6;
+}
+
+.join-room {
+  margin-left: 5px;
+}
+
+.messages {
+  height: 377px;
+  overflow: auto;
+  border: 1px solid #e8e7e8;
+}
+
+.message {
+  border-bottom: 1px solid #c7c7c7;
+  background: #fff;
+  height: 75px;
+  -webkit-transition: background .5s;
+  padding: 3px 3px 3px 10px;
+}
+
+.message img {
+  vertical-align: baseline;
+  margin-right: 9px;
+}
+
+.chat-input {
+  position: absolute;
+  bottom: 0;
+  width: 93%;
+  text-align: center;
+  margin-bottom: 14px;
+  padding-left: 8px;
+}
+
+.back-btn {
+  vertical-align: bottom;
+  margin-left: 20px;
 }

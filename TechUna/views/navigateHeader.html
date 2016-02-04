@@ -1,67 +1,71 @@
 <!-- Start: Navigation wrapper --> 
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a href="#index.html" class="brand brand-bootbus">TechUna</a>  
-        <div ng-if="isAuthenticated()">Welcome, {{ currentUser.uid }}</div>  
-        <li ng-if="isAuthenticated()"><a href="#profile.html">Edit Profile</a></li> 
-        <!-- Below button used for responsive navigation -->
-        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span> 
-        </button>
-        <!-- Start: Primary navigation -->
-        <div class="nav-collapse collapse">        
-          <ul class="nav pull-right"> 
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a href="#index.html" class="brand brand-bootbus">TechUna</a>  
+      <!-- Below button used for responsive navigation -->
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
+      <!-- Start: Primary navigation -->
+      <div class="nav-collapse collapse">        
+        <ul class="nav pull-right">  
+          <li class="dropdown"> 
+            <a href="#" ng-if="isAuthenticated()" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i><br />Profile<b class="caret"></b></a> 
+            <ul class="dropdown-menu">  
+              <li><a href='#profile.html'>Edit Profile</a></li>
+            </ul> 
+          </li> 
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i><br />About<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#our_philosophy.html">Our Philosophy</a></li>
+              <li><a href="#company_statement.html">Company Statement</a></li>
+              <li><a href="#smart_technologies.html">Smart Technologies</a></li>
+              <li><a href="#opportunities.html">Opportunities</a></li>
+              <li><a href="#events.html">Events</a></li>
+              <li><a href="#creators.html">The creators</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"> 
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-tasks"></i><br />Products and Services<b class="caret"></b></a> 
+            <ul class="dropdown-menu">
+              <li class="nav-header">PRODUCTS</li>
+              <li><a href="#product.html">Product1</a></li>
+              <li><a href="#product.html">Product2</a></li>
+              <li><a href="#product.html">Product3</a></li>
+              <li><a href="#all_products.html">All products</a></li>             
+              <li class="divider"></li>
+              <li class="nav-header">SERVICES</li>
+              <li><a href="#service.html">Service1</a></li>
+              <li><a href="#service.html">Service2</a></li>
+              <li><a href="#service.html">Service3</a></li>
+              <li><a href="#all_services.html">All services</a></li>
+            </ul>          
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i><br />About<b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-dashboard"></i><br />Partners<b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#our_philosophy.html">Our Philosophy</a></li>
-                <li><a href="#company_statement.html">Company Statement</a></li>
-                <li><a href="#smart_technologies.html">Smart Technologies</a></li>
-                <li><a href="#opportunities.html">Opportunities</a></li>
-                <li><a href="#events.html">Events</a></li>
-                <li><a href="#creators.html">The creators</a></li>
+                <li><a href="#our_partners.html">Our Partners</a></li>
               </ul>
             </li>
-            <li class="dropdown"> 
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-tasks"></i><br />Products and Services<b class="caret"></b></a> 
+            <li class="dropdown">          
+            </li>  
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-comment"></i><br />Live<b class="caret"></b></a> 
               <ul class="dropdown-menu">
-                <li class="nav-header">PRODUCTS</li>
-                <li><a href="#product.html">Product1</a></li>
-                <li><a href="#product.html">Product2</a></li>
-                <li><a href="#product.html">Product3</a></li>
-                <li><a href="#all_products.html">All products</a></li>             
-                <li class="divider"></li>
-                <li class="nav-header">SERVICES</li>
-                <li><a href="#service.html">Service1</a></li>
-                <li><a href="#service.html">Service2</a></li>
-                <li><a href="#service.html">Service3</a></li>
-                <li><a href="#all_services.html">All services</a></li>
-              </ul>          
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-dashboard"></i><br />Partners<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#our_partners.html">Our Partners</a></li>
-                </ul>
-              </li>
-              <li class="dropdown">          
-              </li>  
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-comment"></i><br />Live<b class="caret"></b></a> 
-                <ul class="dropdown-menu">
-                  <li><a href="#employee.html">Employees</a></li>  
-                  <li><a href="#chat.html">Chat</a></li>
-                </ul> 
-              </li>
-              <li><a href="#join_us.html"><i class="icon-envelope-alt"></i><br />Contact us</a></li>
-              <li><a href="#signup.html"><i class="icon-sitemap"></i><br />Sign Up</a></li>
-              <li><a href="#login.html"><i class="icon-signin"></i><br />Sign In</a></li>  
-              <li ng-if="currentUser"><a ng-controller="LogoutController" ng-click="logout()">Log Out</a></li> 
-            </ul>
-          </div>
+                <li><a href="#employee.html">Employees</a></li>  
+                <li><a href="#chat.html">Chat</a></li>
+              </ul> 
+            </li>
+            <li><a href="#join_us.html"><i class="icon-envelope-alt"></i><br />Contact us</a></li>
+            <li><a href="#signup.html"><i class="icon-sitemap"></i><br />Sign Up</a></li>
+            <li><a href="#login.html"><i class="icon-signin"></i><br />Sign In</a></li>  
+            <li ng-if="currentUser"><a ng-controller="LogoutController" ng-click="logout()">Log Out</a></li> 
+          </ul>
         </div>
-      </div> 
-      </div>      
-  <!-- End: Navigation wrapper -->    
+      </div>
+    </div> 
+  </div>      
+  <!-- End: Navigation wrapper -->   

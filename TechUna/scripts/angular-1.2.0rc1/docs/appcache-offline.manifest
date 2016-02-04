@@ -33,8 +33,7 @@ css/animations.css
 css/doc_widgets.css
 css/docs.css
 css/prettify.css
-docs-data.js
-favicon.ico
+docs-data.json
 img/AngularJS-small.png
 img/One_Way_Data_Binding.png
 img/Two_Way_Data_Binding.png

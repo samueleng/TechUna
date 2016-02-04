@@ -1,41 +1,37 @@
-<div class="container"> 
- 	<div class="page-header">
- 		<img src="img/FireChat_logo.png" class="thumbnail">  
- 		<h1>Real Time Chat </h1> 
- 		<h2> {{title}} </h2>
- 	</div>
+<div class="container">
 
- 	<div class="list-messages">
+	<h3 class="room-head">Welcome to TechUna Chat Room</h3>
 
- 			<div ng-repeat="message in messages"> 
- 			 		{{message.user}} - {{message.text}}
- 			</div>
+	<div class="jumbotron">
+		<div ng-repeat="message in messages" class="message"> 
+			{{message.user}} - {{message.text}}
+		</div>
+	</div> 
+	<button type = "button" style="width:250px" class="btn btn-success" ng-click="pageNext()">Next</button> 
+	<button type = "button" style="width:250px" class="btn btn-success" ng-click="pageBack()">Back</button> 
+	<button type = "button" class="btn btn-danger" ng-click="turnFeedOff()">Turn feed Off</button>	 
 
- 	</div> 
+	<div class="row marketing"> 
 
- 	<button type = "button" class="btn btn-danger" ng-click="turnFeedOff()">Turn feed Off</button>	 
+		<div class="center-align" > 
 
+			<input type="text" class="form-control" ng-model="currentUser" placeholder="Name">  
+			<span class="input-group-btn">  
 
+				<input type="text" class="form-control" ng-model="currentText">   
 
- 	<div class="row marketing" > 
+			</span> 
 
- 	  <div class="center-align" > 
+			<span class = "input-group-btn"> 
 
- 		<input type="text" class="form-control" ng-model="currentUser" placeholder="Name">  
- 		<span class="input-group-btn">  
+				<button class="btn btn-default" type="button" ng-click="sendMessage()">Send</button> 
+			</span>  
 
- 			<input type="text" class="form-control" ng-model="currentText">   
+			<div>  
 
- 		</span> 
+			</div> 
 
- 		<span class = "input-group-btn"> 
+		</div>     
+	</div>
 
- 			<button class="btn btn-default" type="button" ng-keydown="sendMessage($event)" ng-click="sendMessage()">Send</button> 
- 		</span>  
-
- 		<div>  
-
- 	  </div> 
-
- 	</div>     
 </div>

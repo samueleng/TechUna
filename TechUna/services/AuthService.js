@@ -8,32 +8,42 @@ angular
 			'$firebaseAuth',
 			'SessionService', 
 			'FIREBASE',
-			function($firebaseAuth, SessionService) {
+			function($firebaseAuth, SessionService) { 
+				
 				var authService = {};
 
 
-				authService.isAuthenticated = function() {
-					return !!SessionService.userId;
+				authService.isAuthenticated = function() { 
+
+					return !!SessionService.userId; 
+
 				};
 
-				authService.login = function(credentials) {
+				authService.login = function(credentials) { 
+
 					var firebaseAuthService = $firebaseAuth(firebase);
 
-					var promise = firebaseAuthService.$authWithPassword(
+					var promise = firebaseAuthService.$authWithPassword( 
+
 						{
-							email: credentials.email,
+							email: credentials.email, 
+
 							password: credentials.password
-						}
+						} 
+
 					);
 
-					promise.then(function(user) {
-						SessionService.create(user.token, user.uid);
+					promise.then(function(user) { 
+
+						SessionService.create(user.token, user.uid); 
+
 					});
 
 					return promise;
 				};
 
-				authService.logout = function() {
+				authService.logout = function() { 
+
 					var authService = $firebaseAuth(FIREBASE);
 
 					SessionService.destroy();
