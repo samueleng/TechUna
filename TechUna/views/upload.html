@@ -1,0 +1,42 @@
+ <div class="row modalDetail"> 
+   <div class="span6 offset3"> 
+    <div class="center-align">  
+    <h3>New Image Upload</h3> 
+      <table class="" ng-model='episode'>
+        <tbody>
+          <tr>
+            <td class="labelField">Name</td>
+            <td><input type='text' ng-model='episode.name'></td>
+          </tr>
+          <tr>
+            <td class="labelField">Title</td>
+            <td><input type='text' ng-model='episode.title'></td>
+          </tr>
+          <tr>
+            <td class="labelField">Description</td>
+            <td><input type='text' ng-model='episode.shortDescription'></td>
+          </tr>
+          <tr>
+            <td class="labelField">Time</td>
+            <td><input type='text' ng-model='episode.time'></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <td class="labelField">Image</td>
+      <span class="btn btn-default btn-file">
+        <input type="file" accept="image/*" capture="camera" id="file-upload">
+      </span>
+      <div class='btn btn-warning' ng-click='createEpisode()'>Upload to firebase</div>
+      <br/>
+      <img id="pano" width="100px">
+      <br><br>
+      <button ng-click="getImg()">get image from firebase</button>
+
+      <!-- <div ng-show="{{loadClicked}}"> -->
+      <p ng-hide="imgList.length > 0">Loading...</p>
+      <img width="300px" ng-show="imgList.length > 0" ng-repeat="img in imgList" ng-src="{{img}}">
+      <!-- </div> -->
+    </div> 
+  </div> 
+</div>

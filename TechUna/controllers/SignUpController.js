@@ -2,32 +2,23 @@
  
  angular 
     .module('App')  
-       .controller('SignUpController', ['$scope','$window','$firebaseAuth',function($scope, $window, $firebaseAuth) {
-          var firebaseObj = new Firebase("https://samengfire.firebaseio.com/");
-          var auth = $firebaseAuth(firebaseObj) 
+       .controller('SignUpController', ['$scope','$window','$firebaseAuth', 'FIREBASE', function($scope, $window, $firebaseAuth, FIREBASE) { 
 
-          $scope.signUp = function() {  
-            
-                if (!$scope.regForm.$invalid) { 
-                    var email = $scope.user.email;
-                    var password = $scope.user.password; 
-                    var confirmPassword = $scope.user.confirmPassword;
-                    if (email && password) {
-                        auth.$createUser({email: email, password: password})
-                            .then(function() {
-                                // do things if success 
-                                $window.location.href = '/index.html'; 
-                                console.log('User creation success');   
-                                alert('User creation success');  
-                                
-                            }, function(error) {
-                                // do things if failure
-                                console.log(error);   
-                                $scope.regError = true;
-                                $scope.regErrorMessage = error.message;
-                            });
-                    }
-                }
-            };
-        }]);  
+
+          /* 
+           pass the user object which contains
+                username 
+                email 
+                password
+             
+            delegrate to ApplicationController 
+            Reason: tied to service loosely coupled
+          */
+          $scope.signUp = function(user) {  
+                 
+                $scope.registerAction(user);
+
+          }; 
+ 
+}]);  
    

@@ -11,9 +11,20 @@
           <div class="center-align">  
 
             <div class="formWrapper"> 
-              <form class="form-horizontal" name="regForm"> 
+              <form class="form-horizontal" name="regForm">  
+
+                <!-- User Name --> 
+                <div class="form-group"> 
+                  <label><b>User Name</b></label>  
+                  <input type="text" name="username" placeholder="User Name"
+                  ng-model="user.username" ng-required="true">
+                  <p class="error validationerror"
+                  ng-show="regForm.username.$invalid && regForm.username.$touched">
+                  User name required</p>
+                </div> 
+
                 <!-- Email --> 
-                <div class="form-group">
+                <div class="form-group">  
                   <label><b>Email</b></label>
                   <input type="email" name="email" class="form-control" ng-model="user.email" placeholder ="Email" required=""> 
                   <p style="color:red;" span ng-show="regForm.email.$error.required && regForm.email.$dirty">required</span>
@@ -21,7 +32,8 @@
                      <p style="color:red;" ng-show="regError">{{regErrorMessage}}</p> 
                    </div>
                    <br />
-                   <br />
+                   <br /> 
+
                    <!-- Password --> 
                    <div class="fieldWrapper">   
                     <div class="form-group">
@@ -37,7 +49,7 @@
 
                      <!-- Submit -->
                      <br /> 
-                     <button type="button" ng-click="signUp();" ng-disabled="!user.email || !user.password"  class="btn btn-lg btn-primary btn-block">Register</button> 
+                     <button type="button" ng-click="signUp(user);" ng-disabled="!user.email || !user.password"  class="btn btn-lg btn-primary btn-block">Register</button> 
                      <br />
                    </form> 
                    

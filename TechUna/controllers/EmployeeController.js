@@ -7,7 +7,7 @@ angular
 						  $scope.employeeName = "";  
 			   			  $scope.employees = {} 
 						 
-						  $scope.myData = new Firebase("https://samengfire.firebaseio.com/")
+						  $scope.myData = new Firebase("https://samengfire.firebaseio.com/employee")
 						 
 						  $scope.saveEmployee = function(){ 
 						 			$scope.myData.push({employeeName:$scope.employeeName}) 

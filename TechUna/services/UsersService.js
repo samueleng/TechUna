@@ -6,34 +6,47 @@
 */
 angular.module('App')
   .factory('Users', [
-			'FIREBASE',  
+	 'FIREBASE',  
 
 		function($firebaseArray, $firebaseObject, FIREBASE){
 				
-    var usersRef = new Firebase(FIREBASE+'users');
+    var usersRef = new Firebase(FIREBASE + 'users');
 
     var users = $firebaseArray(usersRef);
 
     var Users = { 
 
-      getProfile: function(uid){ 
+      /* 
+        get a $firebaseObject of a specific user's profile
+      */
+      getProfile: function getProfile(uid){ 
 
         return $firebaseObject(usersRef.child(uid)); 
 
       },
 
-      getDisplayName: function(uid){ 
+      /* 
+        returns a user's display name  
+        parameters : user id
+      */
+      getDisplayName: function getDisplayName(uid){ 
 
         return users.$getRecord(uid).displayName; 
 
       },
 
-      getGravatar: function(uid){ 
+      /* 
+        
+      */
+      getGravatar: function getGravatar(uid){ 
 
         return '//www.gravatar.com/avatar/' + users.$getRecord(uid).emailHash; 
 
       },
 
+      /* 
+        get all users in $firebaseArray
+      */
       all: users 
 
     };

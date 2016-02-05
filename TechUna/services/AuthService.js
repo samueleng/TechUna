@@ -5,17 +5,21 @@ angular
 	.factory(
 		'AuthService',
 		[
-			'$firebaseAuth',
+			'$firebaseAuth', 
+			'$window',
 			'SessionService', 
-			'FIREBASE',
+			'FIREBASE', 
 			/* 
 				API for $firebaseAuth :https://www.firebase.com/docs/web/libraries/angular/api.html#angularfire-users-and-authentication
 			*/
-			function($firebaseAuth, SessionService, FIREBASE) { 
+			function($firebaseAuth, $window, SessionService, FIREBASE) { 
 				
 				var authService = {};
 
-				var firebase = new Firebase(FIREBASE);
+				var firebaseObj = new Firebase(FIREBASE);   
+
+				var auth = $firebaseAuth(firebaseObj);
+				
 				/* 
 					Check whether user is login
 				*/
@@ -23,11 +27,62 @@ angular
 
 					return !!SessionService.userId; 
 
+				}; 
+
+				/* 
+					Allow user to register
+				*/
+				authService.register = function(user) { 
+
+                    var email = user.email; 
+
+                    var password = user.password;  
+
+                    var confirmPassword = user.confirmPassword; 
+
+                    if (email && password) { 
+
+                        auth.$createUser({email: email, password: password}) 
+
+                            .then(function(regUser) { 
+
+                                //form information
+                                var userRef = new Firebase(FIREBASE + 'users')
+
+                                // save to /user 
+                                .child(regUser.uid).set({ 
+                                    date: Firebase.ServerValue.TIMESTAMP,
+                                    regUser: regUser.uid,
+                                    user: user.username,        
+                                    email: user.email
+                                }) 
+
+                                // do things if success  
+                                $window.location.href = '/index.html';  
+
+                                console.log('User creation success');   
+
+                                alert('User creation success');  
+                                
+                            }, function(error) { 
+
+                                // do things if failure 
+                                console.log(error);  
+                                alert(error)   
+                            });
+        
+                	} 
+
 				};
 
+				/* 
+					 $firebaseAuth 
+					 returns a promise which is resolved or rejected when the authentication attempt  
+					 is completed
+				*/
 				authService.login = function(credentials) { 
 
-					var firebaseAuthService = $firebaseAuth(firebase);
+					var firebaseAuthService = $firebaseAuth(firebaseObj);
 
 					var promise = firebaseAuthService.$authWithPassword( 
 
@@ -39,18 +94,28 @@ angular
 
 					);
 
+					//successful: return object containing auth data about user
 					promise.then(function(user) { 
 
 						SessionService.create(user.token, user.uid); 
 
-					});
+					})  
+
+					//failure: return Error object
+					.catch(function(error){ 
+
+						console.log("Authentication failed!	");  
+
+						alert("Authentication failed!");
+
+					})
 
 					return promise;
 				};
 
 				authService.logout = function() { 
 
-					var authService = $firebaseAuth(firebase);
+					var authService = $firebaseAuth(firebaseObj);
 
 					SessionService.destroy();
 
