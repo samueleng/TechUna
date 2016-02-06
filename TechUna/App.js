@@ -6,7 +6,28 @@ angular
 			'ui.router',   
 			'angular-md5',
 		]
-	)
+	) 
+	/* 
+		run these functions once angular-bootstrap starts
+	*/ 
+	.run(['$rootScope', '$location', 
+
+		  function($rootScope, $location) { 
+
+		    $rootScope.$on('$routeChangeError', 
+
+		      function(event, next, previous, error) { 
+
+		        if (error=='AUTH_REQUIRED') { 
+
+		          alert("Please login first")
+
+		          $location.path('/login'); 
+
+		        } // AUTH REQUIRED 
+		      }); //event info
+	 }]) 
+
 	.config(
 		[
 			'$urlRouterProvider',
@@ -25,6 +46,19 @@ angular
 				    url: '/profile.html',
 				    controller: 'ProfileController',
 				    templateUrl: 'views/profile.html', 
+				}) 
+
+				.state('addProduct', { 
+					url: '/addProduct.html', 
+					controller: 'AddProductController', 
+					templateUrl: 'views/addProduct.html', 
+					resolve: { 
+						currentAuth: function(AuthService){  
+
+							return AuthService.requireAuth(); 
+							
+						}
+					}
 				})
 
 				.state('all_products',{ 

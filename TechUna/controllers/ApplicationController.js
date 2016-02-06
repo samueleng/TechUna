@@ -5,13 +5,16 @@ angular
 		'ApplicationController', 
 
 		[
-			'$scope',
+			'$scope', 
 			'$rootScope',
-			'$location',
+			'$location', 
+			'$firebaseObject', 
 			'AUTH_EVENTS',
 			'AuthService', 
+			'FIREBASE',  
 
-			function($scope, $rootScope, $location, AUTH_EVENTS, AuthService) { 
+
+			function($scope, $rootScope, $location, $firebaseObject, AUTH_EVENTS, AuthService, FIREBASE) { 
 
 				$scope.currentUser = null; 
 
@@ -22,7 +25,9 @@ angular
 				*/
 				$scope.setCurrentUser = function(user) { 
 
-					$scope.currentUser = user; 
+					$rootScope.currentUser = user;  
+
+					console.log("currentUser:  " + $rootScope.currentUser)
 
 				}; 
 
@@ -33,23 +38,26 @@ angular
 				}
 
 				/*  
-
 					LoginController will call this function 
 					loginAction will use AuthService to login
-
 				*/
 				$scope.loginAction = function(credentials) {  
 
 					AuthService.login(credentials).then( 
 
 						/*  
-							if success we notify all listeners that listen for loginSuccess event 
+							if success we notify all listeners that listen for loginSuccess event  
 						*/
 						function(user) { 
-
+							 
+							//grab from /users/{{user.uid}}
+							var userRef = new Firebase(FIREBASE + 'users/' + user.uid );
+						      
+						    var userObj = $firebaseObject(userRef);
+						    
 							$rootScope.$broadcast(AUTH_EVENTS.loginSuccess); 
 
-							$scope.setCurrentUser(user);
+							$scope.setCurrentUser(userObj);
 
 							$location.path('/home');
 						}, 

@@ -1,0 +1,38 @@
+<div class="card meetings cf"> 
+ 
+ <div class="textintro"> 
+  <h1>Add a Product</h1> 
+  <p>Type a Product name and hit +</p> 
+ </div> 
+
+ <form class="formgroup addmeeting cf" 
+    name="myform" 
+    ng-submit="addProduct()" 
+    novalidate> 
+  
+ <div class="inputwrapper"> 
+    <input type="text" name="productname" 
+    placeholder="Product name" 
+    ng-model="productname" ng-required="true"> 
+ </div>
+
+ <button type="submit" class="btn" 
+      data-ng-disabled="myform.$invalid"> + </button> 
+  
+</form> 
+ 
+<h2>Your products</h2> 
+<div class="meeting" ng-repeat="(key, product) in products"> 
+  <button class="btn btn-delete tooltip" 
+    ng-click="deleteProduct(key)"> 
+    <span>Delete this product</span> 
+</button> 
+ 
+<a class="btn btn-checkin tooltip" 
+  href="#/editproduct/{{currentUser.regUser}}/{{product.$id}}/productList">
+  <span>View product</span></a> 
+
+<span class="text">{{product.name}}</span> 
+</div> 
+ 
+</div>

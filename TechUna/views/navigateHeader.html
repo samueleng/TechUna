@@ -16,6 +16,7 @@
             <a href="#" ng-if="isAuthenticated()" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i><br />Profile<b class="caret"></b></a> 
             <ul class="dropdown-menu">  
               <li><a href='#profile.html'>Edit Profile</a></li> 
+              <li><a href='#addProduct.html'>Add Product</a></li> 
               <li><a href='#upload.html'>Upload Files</a></li>
             </ul> 
           </li> 
@@ -61,9 +62,9 @@
               </ul> 
             </li>
             <li><a href="#join_us.html"><i class="icon-envelope-alt"></i><br />Contact us</a></li>
-            <li><a href="#signup.html"><i class="icon-sitemap"></i><br />Sign Up</a></li>
-            <li><a href="#login.html"><i class="icon-signin"></i><br />Sign In</a></li>  
-            <li ng-if="currentUser"><a ng-controller="LogoutController" ng-click="logout()">Log Out</a></li> 
+            <li ng-if="!isAuthenticated()"><a href="#signup.html"><i class="icon-sitemap"></i><br />Sign Up</a></li>
+            <li ng-if="!isAuthenticated()" ><a href="#login.html"><i class="icon-signin"></i><br />Sign In</a></li>  
+            <li ng-if="isAuthenticated()"><a ng-controller="LogoutController" ng-click="logout()">Log Out</a></li> 
           </ul>
         </div>
       </div>

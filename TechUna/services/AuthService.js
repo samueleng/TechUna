@@ -27,7 +27,13 @@ angular
 
 					return !!SessionService.userId; 
 
-				}; 
+				};   
+
+				authService.requireAuth =  function() { 
+
+			       return auth.$requireAuth(); 
+
+			     }; //require Authentication
 
 				/* 
 					Allow user to register
@@ -67,7 +73,8 @@ angular
                             }, function(error) { 
 
                                 // do things if failure 
-                                console.log(error);  
+                                console.log(error);   
+                                
                                 alert(error)   
                             });
         
