@@ -61,8 +61,8 @@ angular
 					}
 				})
 
-				.state('editProduct', { 
-				 	url: '/editProduct/:uId/:mId/',  
+				.state('edit_product', { 
+				 	url: '/editProduct/:uId/:mId.html',  
 				 	controller: 'EditProductController',
 				 	templateUrl: 'views/editProduct.html'
 				})
