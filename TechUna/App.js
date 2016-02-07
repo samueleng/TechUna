@@ -61,6 +61,12 @@ angular
 					}
 				})
 
+				.state('editProduct', { 
+				 	url: '/editProduct/:uId/:mId/',  
+				 	controller: 'EditProductController',
+				 	templateUrl: 'views/editProduct.html'
+				})
+
 				.state('all_products',{ 
 					// controller: 'IndexController', 
 					templateUrl: 'views/all_products.html', 

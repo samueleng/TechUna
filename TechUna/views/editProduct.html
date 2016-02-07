@@ -1,0 +1,23 @@
+<section class="card checkins">
+  <form name="myform"
+    ng-submit="addDescription()"
+    novalidate>
+
+    <div class="textintro">
+      <h1>Edit product</h1>
+      <p>Fill out this description
+      <a ng-href="#/addProduct">back to product list</a></p>
+
+      <p class="error formerror" ng-show="message">{{ message }}</p>
+    </div>
+
+    <fieldset>
+      <input type="text" name="description" placeholder="Description"
+      ng-model="user.description" ng-required="true">
+
+    </fieldset>
+
+    <button type="submit" class="btn"
+    ng-disabled="myform.$invalid">Add description</button>
+  </form>
+</section>

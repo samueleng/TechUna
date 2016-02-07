@@ -57,7 +57,8 @@
 }
 
 
-/*buttons*/ 
+/*buttons*/  
+
 .card {
   background: white;
   width: 100%;
@@ -336,7 +337,7 @@ ul.awardslist li .award {
   padding-right: 15px;
 }
 
-nav {
+/*nav {
   width: 100%;
   background: #fff;
   box-shadow: 0 1px 1px rgba(0,0,0,.1);
@@ -395,7 +396,7 @@ nav ul li a {
 nav li a:hover {
   color: #E76C5A;
 }
-
+*/
 .userinfo {
   text-align: center;
   font-family: Lato, 'Helvetica Nueue', Helvetica, Arial, sans-serif;

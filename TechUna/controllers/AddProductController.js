@@ -14,7 +14,7 @@ angular
 
 	  		 	if(authUser){ 
 	  		 		var productsRef = new Firebase(FIREBASE + 'users/' + 
-	  		 			$rootScope.currentUser.$id + '/products');  
+	  		 			$scope.currentUser.$id + '/products');  
 
 	  		 		var productsInfo = $firebaseArray(productsRef);  
 
@@ -23,14 +23,14 @@ angular
 	  		 		//make sure product data is loaded 
 	  		 		productsInfo.$loaded().then(function(data){ 
 
-	  		 			$rootScope.howManyProducts = productsInfo.length; 
+	  		 			$scope.howManyProducts = productsInfo.length; 
 	  		 		 
 	  		 		}); 
 
 	  		 		//make sure to update product length real time 
 	  		 		productsInfo.$watch(function(data){ 
 
-	  		 			$rootScope.howManyProducts = productsInfo.length;
+	  		 			$scope.howManyProducts = productsInfo.length;
 
 	  		 		}) 
 

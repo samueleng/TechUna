@@ -1,10 +1,13 @@
-<div class="card meetings cf">
+<div class="card meetings cf">   
 
   <div class="textintro">
     <h1>Add a product</h1>
     <p>Type a product name and hit +</p>
-  </div><!-- textintro -->
-
+  </div><!-- textintro -->  
+  You have currently 
+  <span ng-show="howManyProducts" class="badge">  {{howManyProducts}}
+  </span>  Products
+  <br />
   <form class="formgroup addmeeting cf"
     name="myform"
     ng-submit="addProduct()"
@@ -29,11 +32,11 @@
     </button>
 
     <a class="btn2 btn2-checkin tooltip2" 
-      href="#/checkins/{{currentUser.regUser}}/{{product.$id}}">
-      <span>Go to check-in URL</span></a>
+      href="#/editProduct/{{currentUser.regUser}}/{{product.$id}}">
+      <span>Edit product</span></a>
 
     <a class="btn2 btn2-list tooltip2" 
-      href="#/checkins/{{currentUser.regUser}}/{{product.$id}}/checkinsList">
+      href="#/editProduct{{currentUser.regUser}}/{{product.$id}}/checkinsList">
       <span>View list of checked in users</span></a>
 
 

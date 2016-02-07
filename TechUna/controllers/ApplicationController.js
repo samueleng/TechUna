@@ -25,9 +25,8 @@ angular
 				*/
 				$scope.setCurrentUser = function(user) { 
 
-					$rootScope.currentUser = user;  
+					$scope.currentUser = user;  
 
-					console.log("currentUser:  " + $rootScope.currentUser)
 
 				}; 
 
@@ -52,9 +51,9 @@ angular
 							 
 							//grab from /users/{{user.uid}}
 							var userRef = new Firebase(FIREBASE + 'users/' + user.uid );
-						      
-						    var userObj = $firebaseObject(userRef);
 						    
+						    var userObj = $firebaseObject(userRef);
+						    console.log(userObj)
 							$rootScope.$broadcast(AUTH_EVENTS.loginSuccess); 
 
 							$scope.setCurrentUser(userObj);
