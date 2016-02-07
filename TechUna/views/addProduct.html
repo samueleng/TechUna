@@ -1,38 +1,43 @@
-<div class="card meetings cf"> 
- 
- <div class="textintro"> 
-  <h1>Add a Product</h1> 
-  <p>Type a Product name and hit +</p> 
- </div> 
+<div class="card meetings cf">
 
- <form class="formgroup addmeeting cf" 
-    name="myform" 
-    ng-submit="addProduct()" 
-    novalidate> 
-  
- <div class="inputwrapper"> 
-    <input type="text" name="productname" 
-    placeholder="Product name" 
-    ng-model="productname" ng-required="true"> 
- </div>
+  <div class="textintro">
+    <h1>Add a product</h1>
+    <p>Type a product name and hit +</p>
+  </div><!-- textintro -->
 
- <button type="submit" class="btn" 
-      data-ng-disabled="myform.$invalid"> + </button> 
-  
-</form> 
- 
-<h2>Your products</h2> 
-<div class="meeting" ng-repeat="(key, product) in products"> 
-  <button class="btn btn-delete tooltip" 
-    ng-click="deleteProduct(key)"> 
-    <span>Delete this product</span> 
-</button> 
- 
-<a class="btn btn-checkin tooltip" 
-  href="#/editproduct/{{currentUser.regUser}}/{{product.$id}}/productList">
-  <span>View product</span></a> 
+  <form class="formgroup addmeeting cf"
+    name="myform"
+    ng-submit="addProduct()"
+    novalidate>
 
-<span class="text">{{product.name}}</span> 
-</div> 
- 
+    <div class="inputwrapper">
+      <input type="text" name="productname"
+      placeholder="Product Name"
+      ng-model="productname" ng-required="true">
+    </div>
+
+    <button type="submit" class="btn2"
+      ng-disabled="myform.$invalid">+</button>
+    
+  </form>
+
+  <h2>Your products</h2>
+  <div class="meeting" ng-repeat="(key, product) in products">
+    <button class="btn2 btn2-delete tooltip2"
+      ng-click="deleteProduct(key)">
+      <span>Delete this product</span>
+    </button>
+
+    <a class="btn2 btn2-checkin tooltip2" 
+      href="#/checkins/{{currentUser.regUser}}/{{product.$id}}">
+      <span>Go to check-in URL</span></a>
+
+    <a class="btn2 btn2-list tooltip2" 
+      href="#/checkins/{{currentUser.regUser}}/{{product.$id}}/checkinsList">
+      <span>View list of checked in users</span></a>
+
+
+    <span class="text">{{product.name}}</span>
+  </div>
+
 </div>

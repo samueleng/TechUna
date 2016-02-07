@@ -1,3 +1,63 @@
+.btn2 {
+    display: inline-block;
+    padding: 12px 24px;
+    margin-bottom: 0;
+    font-size: 1.3rem;
+    font-size: 400;
+    line-height: 140%;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: #C61C6F;
+    color: white;
+    background-color: #2D8BCF;
+    background-size: 18px 18px;
+    min-width: 28px;
+    min-height: 28px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+         -o-user-select: none;
+            user-select: none;
+}
+
+
+.btn2 .btn2-left { float: left; }
+.btn2 .btn2-right { float: right; }
+.btn2:focus, .btn2:hover {
+  background-color: #DC322F;
+  outline: none;
+}
+
+.btn2-list { background-image: url(../icons/icon_list.png); }
+.btn2-checkin { background-color: #859835; background-image: url(../icons/icon_checkmark.png); }
+.btn2-delete { background-color: #C94C24; background-image: url(../icons/icon_trash.png); }
+.btn2-love { background-image: url(../icons/icon_heart.png); }
+.btn2-email { background-image: url(../icons/icon_email.png); }
+.btn2-meeting { background-image:  url(../icons/icon_meeting.png); }
+
+.btn2-pick {
+  background: #2D8BCF url(../icons/icon_dice.png) 5px center no-repeat;
+  background-size: 20px 20px;
+  padding: 5px 5px 5px 30px;
+  font-size: .8em;
+  margin: 0 auto;
+}
+
+.btn2-reset {
+  background: #CB4B19 url(../icons/icon_reset.png)  5px center no-repeat;
+  background-size: 20px 20px;
+  padding: 5px 5px 5px 50px;
+}
+
+
+/*buttons*/ 
 .card {
   background: white;
   width: 100%;
@@ -264,7 +324,7 @@ ul.awardslist li:hover {
   background-color: #F5974E;
 }
 
-ul.awardslist li .btn-delete {
+ul.awardslist li .btn2-delete {
   background-color: transparent;
   background-size: 15px 15px;
   background-position: center 40%;
@@ -387,7 +447,7 @@ nav li a:hover {
 
 }
 
-.meetings .meeting .btn {
+.meetings .meeting .btn2 {
   margin-right: 4px;
   padding: 1px 8px;
 }
@@ -401,11 +461,11 @@ nav li a:hover {
   text-decoration: none;
 }
 
-.tooltip {
+.tooltip2 {
   position: relative;
 }
 
-.tooltip span {
+.tooltip2 span {
   background: #FFF;
   color: #000;
   font-size: .8em;
@@ -432,7 +492,7 @@ nav li a:hover {
           transition: all .25s ease-out;
 }
 
-.tooltip:hover span {
+.tooltip2:hover span {
   opacity: 1;
   pointer-events: auto;
   -webkit-transform: translateY(0px);
@@ -466,7 +526,7 @@ nav li a:hover {
   margin: 0;
   padding: 0;
 }
-.checkin .btn {
+.checkin .btn2 {
   padding: 0;
   margin: 0 3px;
 }
@@ -481,7 +541,7 @@ input.ng-valid.ng-touched {
   border: 1px solid #509D12;
 }
 
-.ng-invalid .btn {
+.ng-invalid .btn2 {
   background: gray;
 }
 
