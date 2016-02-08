@@ -15,7 +15,7 @@ angular
 
 				console.log("Login successful")  
 
-				alert("Login successful") 
+				swal("Login successful", "", "success")
 
 				this.authToken = authToken; 
 
@@ -30,7 +30,7 @@ angular
 
 				console.log("Logout") 
 
-				alert("Logout successful") 
+				swal("Logout successful", "", "info")
 
 				this.authToken = null; 
 				

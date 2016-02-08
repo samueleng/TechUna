@@ -69,14 +69,14 @@ angular
 
                                 console.log('User creation success');   
 
-                                alert('User creation success');  
+                                swal("User created", "", "success")
                                 
                             }, function(error) { 
 
                                 // do things if failure 
                                 console.log(error);   
                                 
-                                alert(error)   
+                               	sweetAlert("Oops...", "Something went wrong!", "error");
                             });
         
                 	} 
