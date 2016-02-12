@@ -18,8 +18,10 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.5.0",
-    "bootstrap": "~3.3.6",
-    "jquery": "~2.2.0"
+    "angular-md5": "~0.1.10",
+    "angular-ui-router": "~0.2.18",
+    "angular-route": "~1.5.0",
+    "firebase": "~2.4.0",
+    "angularfire": "~1.1.3"
   }
 }
