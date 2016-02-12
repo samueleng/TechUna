@@ -114,7 +114,7 @@ angular
 
 						console.log("Authentication failed!	");  
 
-						alert("Authentication failed!");
+						sweetAlert("Authentication failed!", "", "error");
 
 					})
 
